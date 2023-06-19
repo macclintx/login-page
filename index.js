@@ -1,15 +1,21 @@
-
+addEventListener('mouseover',function(loginForm){
+    let cursorOver=loginForm.target.id;
+    if(cursorOver!='loginPage'){
+        document.getElementById('loginButton').style.marginLeft='0px';
+    }
+})
 addEventListener("mouseover", function(btn){
     let btnlogin=btn.target.id;
     if (btnlogin=='loginButton'){
         
         let inputUserName=document.getElementById('username');
+        let inputPassword=document.getElementById('password');
+
         var loginButtonMarginLeft,style;
         loginButtonMarginLeft=document.getElementById('loginButton');
         style=loginButtonMarginLeft.currentstyle || window.getComputedStyle(loginButtonMarginLeft);
         
-        if(inputUserName && inputUserName.value){
-            console.log("has a value")
+        if((inputUserName && inputUserName.value) && (inputPassword && inputPassword.value)){
             document.getElementById('loginButton').style.marginLeft='0px';
         }else{
             
@@ -26,42 +32,3 @@ addEventListener("mouseover", function(btn){
     }
     }
 });
-
-/*addEventListener("mouseout", function(btn){
-    let btnlogin=btn.target.id;
-    if (btnlogin=='loginButton'){
-        console.log("works too")
-    }
-});*/
-
-
-
-
-
-/*addEventListener("mouseover",function(movebtn){
-    let btnId=movebtn.target.id;
-    if(btnId=='loginButton'){
-
-        addEventListener('input', (evt) => {
-            var myUserName = document.getElementById("username");
-            let myPassword=document.getElementById("password");
-            if (myUserName && myUserName.value && myPassword && myPassword.value){
-                //document.querySelector(".login-button").style.color="red";
-                console.log("filled")
-                }else{
-                console.log("Not filled")
-            }
-          });
-    }
-    
-});*/
-
-
-
-
-
-
-  
-
-
-
